@@ -89,10 +89,10 @@ function checkRoundWinner(playerPick, computerPick) {
         winnerIs = 'computer';
     }
 
-    if (winnerIs == 'player') {
+    if (winnerIs === 'player') {
         playerResultElem.innerHTML = "Win!";
         player.score++;
-    } else if (winnerIs == 'computer') {
+    } else if (winnerIs === 'computer') {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
     } else {
@@ -120,13 +120,15 @@ function setGamePoints() {
 
 //end of game
 function endOfGame() {
-    if (player.score == 10) {
+    if (player.score === 10) {
         alert(player.name +' - you are the winner!');
         gameState = 'ended'
     setGameElements();
-    } else if (computer.score == 10) {
+    console.log(gameState);
+    } else if (computer.score === 10) {
         alert('Computer is the winner!');
         gameState = 'ended'
     setGameElements();
+    console.log(gameState);
     }
 }
